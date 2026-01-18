@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galery pro</title>
+    <style>
+        #file-preview-list img {
+            width: 150px;
+            height: auto;
+        }
+
+        #file-preview-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            background: cadetblue;
+        }
+
+        .container {
+            display: flex;
+            justify-content: space-around;
+
+        }
+
+        .something {
+            display: flex;
+            flex-direction: column ;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div id="file-preview-list" class="container"></div>
+
+
+    <form id="form-galery">
+        <!--<div class="container">-->
+        <div id="email-input" class="something">
+            <label for="user-email">
+                Email
+            </label>
+            <input type="email" name="user-email" placeholder="Не вводите своё имя">
+        </div>
+        <div id="password-input" class="something">
+            <label for="user-password">Password</label>
+            <input type="password" name="user-password" placeholder="Nothing">
+        </div>
+        <div id="file-input" class="something">
+            <label for="user-file">File</label>
+            <input type="file" name="user-file" placeholder="Nothing" multiple>
+            </di>
+            <button type="submit">Click me</button>
+        </div>
+    </form>
+    <!-- <div id="file-preview-list"></div>-->
+
+    <!-- <img alt="Здесь ваши файлы" id="file-preview"> -->
+    <script>
+        function registraion() {
+            const something = document.querySelector("#form-galery")
+            if (!something) {
+                return
+            } else if (something) {
+                something.addEventListener("submit", (event) => {
+                    event.preventDefault()
+                    const emailInput = something.querySelector("#email-input > input")
+                    const passwordInput = something.querySelector("#password-input > input")
+                    const fileInput = something.querySelector("#file-input > input")
+                    if (!emailInput || !passwordInput || !fileInput) {
+                        return
+                    }
+                    //alert(`Email: ${emailInput.value}\n Password: ${passwordInput.value}`)
+                    console.dir(fileInput)
+                    const previewList = document.querySelector("#file-preview-list")
+
+                    for (let someFile of fileInput.files) {
+                        const reader = new FileReader()
+                        reader.onload = (event) => {
+                            const imgPreviewEl = document.createElement("img")
+                            imgPreviewEl.src = event.target.result
+                            previewList.appendChild(imgPreviewEl)
+                        }
+                        reader.readAsDataURL(someFile)
+                    }
+
+                })
+            }
+        }
+        registraion()
+    </script>
+</body>
+
+</html>

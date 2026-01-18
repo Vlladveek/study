@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome page</title>
+    <link rel="stylesheet" href="./../assets/css/reset.css">
+    <link rel="stylesheet" href="./../assets/css/welcome-page.css">
+
+    <link rel="stylesheet" href="./../assets/css/index.css">
+</head>
+
+<body>
+    <header class="navigation-panel">
+        <div class="navigation-panel__logo">
+            <a class="navigation-panel__logo-link" href="/">Logo</a>
+        </div>
+
+        <nav class="navigation-panel__nav">
+            <ul class="navigation-panel__list hidden">
+                <li class="navigation-panel__item">
+                    <a href="about.html">About us</a>
+                </li>
+                <li class="navigation-panel__item">
+                    <a href="index.html">Home</a>
+                </li>
+            </ul>
+        </nav>
+
+        <div class="navigation-panel__actions">
+            <button type="button" class="btn">Sing in</button>
+            <button type="button" class="btn">Sing up</button>
+        </div>
+    </header>
+
+    <div class="bank-card hidden">
+        <h4 class="name">Name</h4>
+        <div class="bank-card__number">
+            2314235252532
+        </div>
+
+        <div class="bank-card__last-part">
+            <div class="bank-card__date">
+                11/29
+            </div>
+            <div class="bank-card__code">
+                432
+            </div>
+        </div>
+    </div>
+    <div class="cards" id="someCards"></div>
+    <script src="./../assets/js/main.js" type="module"></script>
+    <script src="./../assets/js/cards.js" type="module"></script>
+</body>
+
+</html>

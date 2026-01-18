@@ -1,0 +1,103 @@
+.navigation-panel {
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(0, 245, 253);
+    padding: 10px 20px;
+}
+
+.navigation-panel__logo {
+    font-weight: bold;
+    font-size: 20px;
+    color: black;
+}
+
+.navigation-panel__actions {
+    color: rgba(17, 0, 255, 0.411);
+}
+
+.navigation-panel__logo-link {
+    font-weight: bold;
+    font-size: 20px;
+    color: rgba(0, 2, 100, 0.699);
+
+}
+
+.navigation-panel__list {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+}
+
+.navigation-panel__item {
+   display: flexbox;
+    text-decoration: none;
+    color: #413a3a;
+    font-size: 18px;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.bank-card {
+padding: 10px;
+background: #413a3a;
+border-radius: 10px;
+margin: 0 auto;
+width: 340px;
+min-height: 216px;
+display: flex;
+justify-content: center;
+flex-direction: column;
+height: 100%;
+gap: 10px;
+}
+
+.bank-card__number {
+color: white;
+font-size: 24px;
+}
+.bank-card__last-part {
+display: flex;
+justify-content: space-between;
+margin-top: 10px;
+
+}
+.bank-card__date {
+color: white;
+
+}
+.bank-card__code {
+color: white;
+}
+
+.name{
+    color: white;
+}
+
+
+.btn:hover {
+    background: white;
+}
+
+.navigation-panel__item:hover {
+    background: rgb(2, 217, 255);
+}
+
+.navigation-panel__item {
+    background: transparent;
+    border: 1px solid var(--primary-color);
+    border-width: 1px;
+    border-style: solid;
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+    padding: 7px 14px;
+    border-radius: 5px;
+}
+
+.cards{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}

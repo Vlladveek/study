@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form id="form">
+        <h2>
+            Угадай год рождения.
+        </h2>
+        <div>
+            <label>
+                Сколько тебе лет?
+            </label>
+            <input id="imp" type="number">
+
+        </div>
+        <button type="submit">
+            Отправить
+        </button>
+    </form>
+    <script>
+        const form = document.querySelector("#form")
+        if (form) {
+            form.addEventListener("submit", (evet) => {
+                evet.preventDefault()
+                const imp = document.querySelector("#imp")
+            console.dir(imp)
+            const date = new Date()
+            const age = date.getFullYear() - imp.value
+            alert(`Твой год рождения: ${age}`)
+            })
+        }
+        
+        console.dir(document)
+    </script>
+
+</html>

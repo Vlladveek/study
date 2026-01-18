@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document2</title>
+</head>
+
+<body>
+    <button id="addition">
+        Calc(+)
+    </button>
+
+    <button id="subtraction">
+        Calc(-)
+    </button>
+
+    <button id="multiplication">
+        Calc(*)
+    </button>
+
+    <button id="devison">
+        Calc(/)
+    </button>
+   
+   <script>
+function addSomeNumbers() {
+    let a = prompt("Введите первое число")
+    let b = prompt("Введите второе число")
+    alert(`Результат: ${a*1 + b*1}`)
+}
+const numbersAdd = document.querySelector("#addition") 
+if (numbersAdd) {
+    numbersAdd.addEventListener("click", () => {
+        addSomeNumbers()
+    })
+}
+
+function subSomeNumbers() {
+     let a = prompt("Введите первое число")
+    let b = prompt("Введите второе число")
+    alert(`Результат: ${a*1 - b*1}`)
+}
+const numbersSub = document.querySelector("#subtraction")
+if (numbersSub) {
+     numbersSub.addEventListener("click", () => {
+        subSomeNumbers()
+    })
+}
+
+function multSomeNumbers() {
+    let a = prompt("Введите первое число")
+    let b = prompt("Введите второе число")
+    alert(`Результат: ${a*1 * b*1}`)
+}
+const numbersMult = document.querySelector("#multiplication")
+if (numbersMult) {
+    numbersMult.addEventListener("click", () => {
+        multSomeNumbers()
+    })
+}
+
+function devSomeNumbers() {
+     let a = prompt("Введите первое число")
+    let b = prompt("Введите второе число")
+    alert(`Результат: ${a*1 / b*1}`)
+}
+const numbersDev = document.querySelector("#devison")
+if (numbersDev) {
+    numbersDev.addEventListener("click", () => {
+        devSomeNumbers()
+    })
+}
+
+    </script>
+</body>
+
+</html>
