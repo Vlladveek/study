@@ -53,33 +53,35 @@ const users = [
     }
 ];
 
-// функция для создания таблицы пользователей
+/**
+ * @description this function make table
+ * @param {object} users 
+ * @returns none
+ */
 function init_users_table(users) {
     // получаем таблицу по id
     const table = document.getElementById("users-table");
-    //если таблицы, то заканчиваем выполнения функции
     if (!table) {
         return;
     }
-
     //создаем переменную для заголовка таблицы
     const tr = document.createElement("tr");
     //добавляем в заголовок все ключи первого пользователя
     Object.keys(users[0]).forEach(key => {
-        const th = document.createElement("th"); //ячейку для заголовка
-        th.textContent = key; //вставляем название колонки
+        const th = document.createElement("th"); 
+        th.textContent = key; 
         tr.appendChild(th); //добавляем ячейку в строку
     });
     // вставляем заголовок в таблицу
     table.appendChild(tr);
     //здесь создаем строки для каждого пользователя
     for (let i = 0; i < users.length; i++) {
-        const row = document.createElement("tr"); // новая строка
+        const row = document.createElement("tr"); 
         const values = Object.values(users[i]); // получаем значения пользователя
-        // создаем ячейки для каждого еелемента
+        // здесь создаем ячейки для каждого еелемента
         for (let j = 0; j < values.length; j++) {
-            const td = document.createElement("td");// ячейка
-            td.textContent = values[j];// вставляем значение
+            const td = document.createElement("td");
+            td.textContent = values[j];
             row.appendChild(td);// добавляем ячейку в строку
         }
         // вставляем строку пользователя в таблицу 

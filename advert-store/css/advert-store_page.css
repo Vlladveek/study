@@ -689,18 +689,18 @@
         justify-content: center;
     }
 
-    .cta-block_buttons {
+    /*.cta-block_buttons {
         display: flex;
         flex-direction: column;
         align-items: center;
         gap: 15px;
-    }
+    }*/
 
-    .cta-block_buttons {
+   /* .cta-block_buttons {
         display: flex;
         flex-direction: column;
         gap: 15px;
-    }
+    }*/
 
     .cta-block_buttons button,
     .cta-block_buttons a {
