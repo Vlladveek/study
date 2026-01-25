@@ -53,39 +53,38 @@ const users = [
     }
 ];
 
+// функция для создания таблицы пользователей
 function init_users_table(users) {
+    // получаем таблицу по id
     const table = document.getElementById("users-table");
+    //если таблицы, то заканчиваем выполнения функции
     if (!table) {
         return;
     }
-    const tr = document.createElement("tr");
-    Object.keys(users[0]).forEach(key => {
-        const th = document.createElement("th");
-        th.textContent = key;
-        tr.appendChild(th);
-    });
-    table.appendChild(tr);
-    for (let i = 0; i < users.length; i++) {
-        const row = document.createElement("tr");
-        const values = Object.values(users[i]);
-        for (let j = 0; j < values.length; j++) {
-            const td = document.createElement("td");
-            td.textContent = values[j];
-            row.appendChild(td);
-        }
 
+    //создаем переменную для заголовка таблицы
+    const tr = document.createElement("tr");
+    //добавляем в заголовок все ключи первого пользователя
+    Object.keys(users[0]).forEach(key => {
+        const th = document.createElement("th"); //ячейку для заголовка
+        th.textContent = key; //вставляем название колонки
+        tr.appendChild(th); //добавляем ячейку в строку
+    });
+    // вставляем заголовок в таблицу
+    table.appendChild(tr);
+    //здесь создаем строки для каждого пользователя
+    for (let i = 0; i < users.length; i++) {
+        const row = document.createElement("tr"); // новая строка
+        const values = Object.values(users[i]); // получаем значения пользователя
+        // создаем ячейки для каждого еелемента
+        for (let j = 0; j < values.length; j++) {
+            const td = document.createElement("td");// ячейка
+            td.textContent = values[j];// вставляем значение
+            row.appendChild(td);// добавляем ячейку в строку
+        }
+        // вставляем строку пользователя в таблицу 
         table.appendChild(row);
     }
-
-    /* users.forEach(user => {
-         const row = document.createElement("tr");
-         Object.values(user).forEach(values => {
-             const td = document.createElement("td");
-             td.textContent = values;
-             row.appendChild(td);
-         });
-         table.appendChild(row);
- });*/
 }
 init_users_table(users);
 
