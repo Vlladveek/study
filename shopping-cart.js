@@ -48,5 +48,5 @@ function replace_item(cart, item_name, item) {
         }
     }
 }
-console.log(replace_item(cart, "asdsS", {name: "Kivi", price: 50 }))
+console.log(replace_item(cart, "Pineapple", {name: "Kivi", price: 50 }))
 console.log(cart)

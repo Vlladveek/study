@@ -23,32 +23,50 @@ function get_student_names(students) {
 }
 console.log(get_student_names(school))   // выводим имена учеников школы в консоль
 
-function find_student_by_name(name) {
-    for (let student in school) {    // перебираем всех учеников в объекте school
-        if (student === name) {       //проверяем совпадает ли имя ученика с искомым
-            console.log(`The student ${name} has found!`)
-        } else {
-            console.log(`The student ${name} has not found!`)
+function find_student_by_name(name, students) {
+   /* let found = false
+    for (let student in students) {    // перебираем всех учеников в объекте school
+        if (student === name) {    //проверяем совпадает ли имя ученика с искомым
+            found = true
+            break
         }
+    }
+    if (found) {
+        console.log(`The student ${name} has found!`)
+    } else {
+        console.log(`The student ${name} has not found!`)
+    }*/
+    const found_student = Object.keys(students).find((name_student) => {
+        return name_student === name 
+    })
+    if (found_student) {
+        console.log(`The student ${name} has found!`)
+    } else {
+        console.log(`The student ${name} has not found!`)
     }
 }
 
-console.log(find_student_by_name("мак", school));
+console.log(find_student_by_name("petro", school));
 
 function get_average_score(students) {
-    const results = {}
+    const results = []
     for (let name in students) {
         let grades = students[name].grades
         let suma = 0
         for (let index = 0; index < grades.length; index++) {
             suma += grades[index]
         }
-        results[name] = suma / grades.length
+        results.push(`${name}: ${suma / grades.length}`)
     }
     return results
 }
-get_average_score(school);
+console.log(get_average_score(school))
 
+const students_names = get_student_names(school)
+for(let index = 0; index < students_names.length; index++) {
+    let name = students_names[index]
+    console.log(`${name} - ${get_student_summary(school[name])}`)
+}
 function get_student_summary(student) {
     let suma = 0;
 
@@ -63,4 +81,4 @@ function get_student_summary(student) {
             "Нужно подтянуть";
 
 }
-console.log(get_student_summary(school.ivan));
+//console.log(get_student_summary(school.ivan));
