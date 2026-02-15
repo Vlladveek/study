@@ -39,14 +39,23 @@ console.log(cart)
 console.log("----------------------------")
 
 function replace_item(cart, item_name, item) {
+    let isFound = false
     for (let index = 0; index < cart.length; index++) {
         if (cart[index].name === item_name) {
             cart.splice(index, 1, item)
+            isFound = true
             return cart
-        } else {
-            return console.log(`The product ${item_name} has not found`)
-        }
+        } 
+    }
+    if (isFound === false) {
+        console.log(`The product ${item_name} has not found`)
     }
 }
-console.log(replace_item(cart, "Pineapple", {name: "Kivi", price: 50 }))
-console.log(cart)
+const isReplaced = replace_item(cart, "Ananas", { name: "Kivi", price: 50 })
+if (isReplaced) {
+    console.log(isReplaced)
+} else {
+    console.log(cart)
+}
+//console.log(replace_item(cart, "Ananas", { name: "Kivi", price: 50 }))
+//console.log(cart)
