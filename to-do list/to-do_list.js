@@ -2,7 +2,7 @@ const addButton = document.querySelector(".addButton")
 addButton.addEventListener("click", () => {
     //let checkBox = document.createElement("checkbox")
     //li.appendChild(checkBox)
-
+    
     /*let checkBox = document.createElement("input")
     checkBox.type = "checkbox"
     li.prepend(checkBox)*/ 
